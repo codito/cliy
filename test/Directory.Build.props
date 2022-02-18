@@ -1,0 +1,9 @@
+<Project>
+  <PropertyGroup>
+    <TestProject>true</TestProject>
+  </PropertyGroup>
+
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+</Project>
+<!-- vim: set ft=xml : -->
+

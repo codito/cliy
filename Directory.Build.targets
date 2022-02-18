@@ -1,0 +1,8 @@
+<Project>
+  <ItemGroup>
+    <PackageReference Include="Stylecop.Analyzers" Condition="$(StylecopEnabled) == '' or $(StylecopEnabled) != 'false'">
+      <Version>1.2.0-beta.333</Version>
+    </PackageReference>
+  </ItemGroup>
+</Project>
+<!-- vim: set ft=xml : -->
