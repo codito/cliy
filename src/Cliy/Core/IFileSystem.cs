@@ -1,8 +1,11 @@
 ﻿// Copyright (c) Arun Mahapatra. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-using Cliy.UI;
+namespace Cliy.Core;
 
-using var host = new Host();
+public interface IFileSystem
+{
+    void Copy(string source, string destination);
 
-await host.RunAsync(args);
+    bool Exists(string path);
+}

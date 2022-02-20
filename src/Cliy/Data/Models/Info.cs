@@ -1,8 +1,11 @@
 ﻿// Copyright (c) Arun Mahapatra. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-using Cliy.UI;
+namespace Cliy.Data.Models;
 
-using var host = new Host();
+using SQLite;
 
-await host.RunAsync(args);
+[Table("Info")]
+public class Info
+{
+}

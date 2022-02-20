@@ -3,6 +3,24 @@
 
 namespace Cliy.Core;
 
-internal interface IWorkflow
+public interface IWorkflow
 {
+    Task<IWorkflowResponse> RunAsync(IWorkflowRequest request);
+}
+
+public interface IWorkflowRequest
+{
+}
+
+public interface IWorkflowResponse
+{
+    // TODO: error code, error message etc.
+}
+
+/// <summary>
+/// Represents a service container and composition root.
+/// </summary>
+public interface IHost
+{
+    T GetService<T>();
 }
