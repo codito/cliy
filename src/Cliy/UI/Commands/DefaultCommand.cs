@@ -4,6 +4,7 @@
 namespace Cliy.UI.Commands;
 
 using System.CommandLine;
+using System.CommandLine.Invocation;
 
 public class DefaultCommand : RootCommand
 {
