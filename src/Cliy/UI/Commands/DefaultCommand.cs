@@ -10,7 +10,7 @@ public class DefaultCommand : RootCommand
     public DefaultCommand(IEnumerable<ICommandOption> options, IEnumerable<Command> commands)
     {
         this.Description = "TODO: tool description goes here.";
-        this.Name = "TODO: tool name goes here.";
+        this.Name = "TODO";
 
         foreach (var opt in options)
         {
