@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <SourceDir>../../</SourceDir>
+    <PackageType>Template</PackageType>
+    <PackageVersion>1.0</PackageVersion>
+    <PackageId>Cliy</PackageId>
+    <Title>Console template extraordinaire</Title>
+    <Authors>codito</Authors>
+    <Description>A console template with static checks, dependency injection, commandline parser, text ui helpers, sqlite and CI setup.</Description>
+    <PackageTags>dotnet-new;templates;console;cli</PackageTags>
+    <TargetFramework>netstandard2.0</TargetFramework>
+
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <ContentTargetFolders>content</ContentTargetFolders>
+
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="$(SourceDir)\src\**\*" Exclude="$(SourceDir)\src\**\bin\**;$(SourceDir)\src\**\obj\**" PackagePath="content\src" />
+    <Content Include="$(SourceDir)\test\**\*" Exclude="$(SourceDir)\test\**\bin\**;$(SourceDir)\test\**\obj\**" PackagePath="content\test" />
+    <Content Include="$(SourceDir)\scripts\**\*" Exclude="$(SourceDir)\scripts\**\bin\**;$(SourceDir)\scripts\**\obj\**" PackagePath="content\scripts" />
+    <Content Include="$(SourceDir)\.github\**\*" Exclude="$(SourceDir)\.github\**\template*" PackagePath="content\.github" />
+    <Content Include="$(SourceDir)\Cliy.sln;$(SourceDir)\Directory.Build.*;$(SourceDir)\CHANGELOG.md;$(SourceDir)\LICENSE;$(SourceDir)\README.md" />
+    <RemoveContent Include="$(SourceDir)\**\*" />
+  </ItemGroup>
+
+</Project>

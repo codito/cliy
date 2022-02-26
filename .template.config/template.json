@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "codito@codito.in",
+  "classifications": [
+    "Console"
+  ],
+  "identity": "Cliy",
+  "name": "Console template extraordinaire",
+  "shortName": "cliy"
+}
