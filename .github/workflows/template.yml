@@ -1,4 +1,4 @@
-name: Build
+name: Template Build
 
 on: [push, pull_request]
 
@@ -21,8 +21,8 @@ jobs:
           dotnet-version: 6.0.x
       - name: Test
         run: |
-          dotnet test --configuration Debug template/test/Cliy.Template.Test.csproj
-          dotnet test --configuration Release template/test/Cliy.Template.Test.csproj
+          dotnet test --configuration Debug template/test/Cliy.Template.Tests.csproj
+          dotnet test --configuration Release template/test/Cliy.Template.Tests.csproj
       - name: Pack
         run: dotnet pack template/src/Cliy.Template.csproj --configuration Release
       - name: Upload build artifacts
