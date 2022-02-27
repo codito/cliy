@@ -22,7 +22,7 @@ public class CliyTemplateTest : IDisposable
         await using var tempDirectory = TempDirectory.NewTempDirectory();
         var project = await tempDirectory.DotnetNewAsync("cliy");
 
-        await project.DotnetRestoreAsync();
+        await project.DotnetRestoreAsync(timeout: TimeSpan.FromMinutes(10));
         await project.DotnetBuildAsync();
         await project.DotnetTestAsync();
     }
