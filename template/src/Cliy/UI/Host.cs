@@ -3,12 +3,6 @@
 
 namespace Cliy.UI;
 
-using Cliy.Core;
-using Cliy.Data;
-using Cliy.Infra;
-using Cliy.UI.Commands;
-using Jab;
-using Spectre.Console;
 using System;
 using System.Collections.Generic;
 using System.CommandLine;
@@ -17,6 +11,12 @@ using System.CommandLine.Parsing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Cliy.Core;
+using Cliy.Data;
+using Cliy.Infra;
+using Cliy.UI.Commands;
+using Jab;
+using Spectre.Console;
 
 /// <summary>
 /// Host is the app container root.

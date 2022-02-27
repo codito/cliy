@@ -3,13 +3,13 @@
 
 namespace Cliy.Tests.UI;
 
-using Cliy.Core;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Cliy.Core;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 [TestClass]
 public class HostTests
