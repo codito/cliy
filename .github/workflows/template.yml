@@ -21,15 +21,15 @@ jobs:
           dotnet-version: 6.0.x
       - name: Test
         run: |
-          dotnet test --configuration Debug template/test/Cliy.Template.Tests.csproj
-          dotnet test --configuration Release template/test/Cliy.Template.Tests.csproj
+          dotnet test --configuration Debug
+          dotnet test --configuration Release
       - name: Pack
-        run: dotnet pack template/src/Cliy.Template.csproj --configuration Release
+        run: dotnet pack src/Cliy.Template.csproj --configuration Release
       - name: Upload build artifacts
         uses: actions/upload-artifact@v1
         with:
           name: Cliy.${{ matrix.os }}
-          path: template/src/bin/Release/
+          path: src/bin/Release/
 
   publish:
     if: contains(github.ref, 'tags/v') # only publish tagged versions
@@ -51,13 +51,13 @@ jobs:
         shell: bash
       - name: Build
         run: |
-          dotnet pack template/src/Cliy.Template.csproj --configuration Release --version-suffix ${{ steps.extract_version.outputs.version }}
-          ls -l template/src/bin/Release
+          dotnet pack src/Cliy.Template.csproj --configuration Release --version-suffix ${{ steps.extract_version.outputs.version }}
+          ls -l src/bin/Release
       - name: Create Release
         uses: ncipollo/release-action@v1.8.4
         with:
           name: Release ${{ steps.extract_version.outputs.version }}
           body: |
             [Changelog](https://github.com/codito/Cliy/blob/master/CHANGELOG.md)
-          artifacts: "template/src/bin/Release/*.nupkg"
+          artifacts: "src/bin/Release/*.nupkg"
           token: ${{ secrets.GITHUB_TOKEN }}

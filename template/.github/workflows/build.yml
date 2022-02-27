@@ -21,18 +21,15 @@ jobs:
           dotnet-version: 6.0.x
       - name: Test
         run: |
-          cd template
           dotnet test --configuration Debug
           dotnet test --configuration Release
       - name: Publish
-        run: |
-          cd template
-          dotnet publish src/Cliy -o src/Cliy/bin/Publish/ --configuration Release
+        run: dotnet publish src/Cliy -o src/Cliy/bin/Publish/ --configuration Release
       - name: Upload build artifacts
         uses: actions/upload-artifact@v1
         with:
           name: Cliy.${{ matrix.os }}
-          path: template/src/Cliy/bin/Publish/
+          path: src/Cliy/bin/Publish/
 
   publish:
     if: contains(github.ref, 'tags/v') # only publish tagged versions
@@ -54,7 +51,6 @@ jobs:
         shell: bash
       - name: Build
         run: |
-          cd template
           dotnet publish src/Cliy -c Release --self-contained false -r win-x64 -o ./src/Cliy/bin/Portable.win-x64
           dotnet publish src/Cliy -c Release --self-contained false -r linux-x64 -o ./src/Cliy/bin/Portable.linux-x64
           dotnet publish src/Cliy -c Release --self-contained -r win-x64 -o ./src/Cliy/bin/win-x64
@@ -70,5 +66,5 @@ jobs:
           name: Release ${{ steps.extract_version.outputs.version }}
           body: |
             [Changelog](https://github.com/codito/Cliy/blob/master/CHANGELOG.md)
-          artifacts: "template/src/Cliy/bin/*.zip"
+          artifacts: "src/Cliy/bin/*.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
