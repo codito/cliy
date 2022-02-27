@@ -5,6 +5,43 @@
     "Console"
   ],
   "identity": "Cliy",
-  "name": "Console template extraordinaire",
-  "shortName": "cliy"
+  "name": "Command line app template with batteries included and a clean architecture",
+  "shortName": "cliy",
+  "sourceName": "Cliy",
+  "preferNameDirectory": true,
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols": {
+    "companyName": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "My Company",
+      "defaultValue": "My Company"
+    },
+    "license": {
+      "type": "parameter",
+      "datatype": "text",
+      "replaces": "MIT",
+      "defaultValue": "MIT"
+    },
+    "includetest": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true"
+    }
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(!includetest)",
+          "exclude": [
+            "test/**/*"
+          ]
+        }
+      ]
+    }
+  ]
 }

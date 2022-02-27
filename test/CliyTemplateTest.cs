@@ -20,7 +20,7 @@ public class CliyTemplateTest : IDisposable
     public async Task DotnetRunWithDefaultArgumentsIsSuccessful()
     {
         await using var tempDirectory = TempDirectory.NewTempDirectory();
-        var project = await tempDirectory.DotnetNewAsync("cliy");
+        var project = await tempDirectory.DotnetNewAsync("cliy", "DefaultArguments");
 
         await project.DotnetRestoreAsync(timeout: TimeSpan.FromMinutes(10));
         await project.DotnetBuildAsync();

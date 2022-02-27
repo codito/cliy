@@ -28,10 +28,14 @@ TODO: will push to nuget soon.
 > cd cliy
 > dotnet new --install template
 
+# See all available parameters
+> dotnet new cliy --help
+
 # Now let's try to create a app from this template
 > mkdir /tmp/trial
 > cd /tmp/trial
-> dotnet new cliy
+> dotnet new cliy --name "FooApp" --companyName "John Doe"
+> cd FooApp
 > dotnet build    # build the freshly minted project
 > dotnet test     # run a few tests
 ```
