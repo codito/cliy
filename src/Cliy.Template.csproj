@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <SourceDir>../../</SourceDir>
+    <SourceDir>..\template</SourceDir>
     <PackageType>Template</PackageType>
     <PackageVersion>1.0</PackageVersion>
     <PackageId>Cliy</PackageId>
@@ -24,7 +24,7 @@
     <Content Include="$(SourceDir)\scripts\**\*" Exclude="$(SourceDir)\scripts\**\bin\**;$(SourceDir)\scripts\**\obj\**" PackagePath="content\scripts" />
     <Content Include="$(SourceDir)\.github\**\*" Exclude="$(SourceDir)\.github\**\template*" PackagePath="content\.github" />
     <Content Include="$(SourceDir)\Cliy.sln;$(SourceDir)\Directory.Build.*;$(SourceDir)\CHANGELOG.md;$(SourceDir)\LICENSE;$(SourceDir)\README.md" />
-    <RemoveContent Include="$(SourceDir)\**\*" />
+    <RemoveContent Include="**\*" />
   </ItemGroup>
 
 </Project>
