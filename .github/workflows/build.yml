@@ -15,10 +15,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.0.2
-      - name: Install .NET (v6.0)
+      - name: Install .NET
         uses: actions/setup-dotnet@v2.1.0
         with:
-          dotnet-version: 6.0.x
+          dotnet-version: 7.0.x
       - name: Test
         run: |
           cd template
@@ -44,10 +44,10 @@ jobs:
       NUGET_XMLDOC_MODE: skip
     steps:
       - uses: actions/checkout@v3
-      - name: Install .NET (v6.0)
+      - name: Install .NET
         uses: actions/setup-dotnet@v2.1.0
         with:
-          dotnet-version: 6.0.x
+          dotnet-version: 7.0.x
       - name: Extract version
         id: extract_version
         run: echo ::set-output name=version::${GITHUB_REF/refs\/tags\//}
